@@ -1,7 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      storageBucket: "homez-2688a.firebasestorage.app",
+      apiKey: "AIzaSyArppZnHgP5kf_aeGlgy0BnjvcjyC-ci0s",
+      appId: "1:894218328366:android:81ee3044fd74bacb9f42bf",
+      messagingSenderId: "",
+      projectId: 'homez-2688a',
+    ),
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -106,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this :',
+              'You have pushed the button this abc:',
             ),
             Text(
               '$_counter',
