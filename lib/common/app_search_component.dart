@@ -61,12 +61,12 @@ class _AppSearchComponentState extends State<AppSearchComponent> {
       ),
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         isDense: true,
         counterText: "",
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.black,
+            color: Colors.white,
             width: 1.5,
           ),
           borderRadius: BorderRadius.all(
@@ -75,7 +75,7 @@ class _AppSearchComponentState extends State<AppSearchComponent> {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.black,
+            color: Colors.white,
             width: 1.0,
           ),
           borderRadius: BorderRadius.all(
