@@ -8,6 +8,7 @@ import '../../bloc/homzes_state.dart';
 import '../../common/app_button.dart';
 import '../../domain/entity/home_category_entity.dart';
 import '../../utils/app_images.dart';
+import '../catalog1/catalog1_view.dart';
 
 class HomzesWelcomeView extends StatefulWidget {
   const HomzesWelcomeView({super.key});
@@ -17,7 +18,7 @@ class HomzesWelcomeView extends StatefulWidget {
 }
 
 class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
-  HomzesBloc homzesBloc = HomzesBloc();
+  PropertyBloc homzesBloc = PropertyBloc();
   List<HomeCategoryEntity> nearestLocations = [
     HomeCategoryEntity(name: 'Rent', image: AppImages.appRent, color: Colors.white38),
     HomeCategoryEntity(name: 'Buy', image:AppImages.appRent, color: Colors.amber),
@@ -27,10 +28,10 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider<HomzesBloc>(
+      body: BlocProvider<PropertyBloc>(
         create: (_) => homzesBloc,
 
-        child: BlocListener<HomzesBloc, HomzesState>(
+        child: BlocListener<PropertyBloc, PropertyState>(
             listener: (_, state) {},
             child: Stack(
               children: [
@@ -96,7 +97,9 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
                       SizedBox(height: 20,),
 
                       AppButton(buttonText: 'Create an account', onTapButton: (){
-
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) =>  Catalog1View()),
+                        );
                       },)
 
 

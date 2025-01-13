@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:homez/views/catalog1/catalog1_view.dart';
 import 'package:homez/views/welcome/homzes_welcome_view.dart';
 
 Future<void> main() async {

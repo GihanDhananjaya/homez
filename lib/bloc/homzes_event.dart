@@ -1,5 +1,8 @@
+import 'package:equatable/equatable.dart';
 
-import 'package:flutter/cupertino.dart';
+abstract class PropertyEvent extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
-@immutable
-abstract class HomzesEvent{}
+class FetchProperties extends PropertyEvent {}
