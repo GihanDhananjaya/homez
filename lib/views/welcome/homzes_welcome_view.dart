@@ -34,6 +34,7 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
         child: BlocListener<PropertyBloc, PropertyState>(
             listener: (_, state) {},
             child: Stack(
+              fit: StackFit.expand,
               children: [
                 ColorFiltered(
                   colorFilter: ColorFilter.mode(
@@ -45,28 +46,26 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
                       height:double.infinity,
                       width: double.infinity),
                 ),
-                Positioned(
-                  top: 90 ,
-                  left: 20,
-                  right: 20,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(AppImages.appHomzes,height: 21,width: 98,),
-                      InkResponse(
-                          onTap: (){},
-                          child: Image.asset(AppImages.appMenu,height: 50,width: 50,)),
-                    ],
-                  ),
-                ),      
-                 Positioned(
-                  top: (MediaQuery.of(context).size.height / 2) ,
-                  left: 0,
-                  right: 0,
+
+                 Align(
+                 alignment: Alignment.topCenter,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 20.0,vertical: 40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset(AppImages.appHomzes,height: 21,width: 98,),
+                            InkResponse(
+                                onTap: (){},
+                                child: Image.asset(AppImages.appMenu,height: 50,width: 50,)),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
                       Padding(
                         padding:  EdgeInsets.symmetric(horizontal: 70.0),
                         child: Text("Find the best place for you",
@@ -78,7 +77,7 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
                         ),),
                       ),
 
-                      SizedBox(height: 60,),
+                      SizedBox(height: 50,),
                       SizedBox(
                         height: 172,
                         child: ListView.builder(
@@ -94,13 +93,16 @@ class _HomzesWelcomeViewState extends State<HomzesWelcomeView> {
                           },
                         ),
                       ),
-                      SizedBox(height: 20,),
 
-                      AppButton(buttonText: 'Create an account', onTapButton: (){
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) =>  Catalog1View()),
-                        );
-                      },)
+                     SizedBox(height: 20,),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
+                        child: AppButton(buttonText: 'Create an account', onTapButton: (){
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) =>  Catalog1View()),
+                          );
+                        },),
+                      )
 
 
                     ]
